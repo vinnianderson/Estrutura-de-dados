@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include "../PilhaEncadeada/Stack.cpp"
 #define TAM 10
 typedef struct stack{
     int dados[TAM];
@@ -41,4 +43,33 @@ if (isEmpty(s)) {
         return s.dados[s.topo];
     }
 
+}
+void converterBinario(int n){
+    int quoc, resto;
+    Stack pilha;
+ inicialize(&pilha);
+ int result;
+ while(n !=0){
+    quoc = n / 2;
+    resto = n % 2;
+    if(isFull (pilha) == 0){
+        push (&pilha,resto);
+    } else{
+        printf("ERRO: Stack Full!");
+        return;
+
+    }
+    n = quoc;
+ }
+
+while(isEmpty(pilha) == 0){
+    result = pop(&pilha);
+    printf("%d", result);
+
+} printf("\n");
+
+
+}
+int main(){
+                                                                                                                                 
 }
